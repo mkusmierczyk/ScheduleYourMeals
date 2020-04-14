@@ -1,18 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Charmonman');
-h1{
+
+h1 {
   font-family: Charmonman;
+  font-size: 2rem;
 }
-body{
+
+body {
   background-color: #292F32;
 }
-#first{
-  font-weight:100;
+
+#first {
+  font-weight: 100;
   color: white;
 }
-#second{
-  color:#E58A20;
+
+#second {
+  color: #E58A20;
   font-weight: 700;
 }
+
+header {
+  height: 50px;
+}
+
 nav {
   display: inline-block;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    padding: 30px;
+    color: white;
+    &:first-child {
+      color: orange;
+    }
+  }
+}
+
+.head {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
