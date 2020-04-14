@@ -21,4 +21,8 @@ node_modules/
 .vscode/
 
 ### Webstorm ##
+<<<<<<< HEAD
 .idea/
+=======
+.idea/
+>>>>>>> ebe203f2dcda8e98734daf04e8f84d4f610431d1
