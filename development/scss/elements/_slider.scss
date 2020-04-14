@@ -1,0 +1,33 @@
+
+.section1 div{
+  width: ;
+  height: 40vh;
+  display: flex;
+  background-color: $screen_bg;
+
+  //flex-direction: column;
+  //justify-content: space-evenly;
+}
+
+.slider h1, .slider p {
+  font-family: $text-font;
+}
+.slider h1 {
+  font-size: 3rem;
+}
+.slider p {
+  font-size: 2rem;
+}
+.slider ul {
+  list-style: none;
+}
+.slider li{
+  display: none;
+  text-align: center;
+}
+.slider .visible {
+  display: inline-block;
+}
+.section1 button{
+  //color: $header_color;
+}
