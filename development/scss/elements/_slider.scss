@@ -1,0 +1,40 @@
+.section1 div{
+  height: 40vh;
+  display: flex;
+  background-color: $screen_bg;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider h1, .slider p {
+  font-family: $text-font;
+}
+.slider h1 {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+.slider p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.slider ul {
+  list-style: none;
+}
+.slider li{
+  display: none;
+  text-align: center;
+}
+.slider .visible {
+  display: inline-block;
+}
+.section1 button{
+  //color: $header_color;
+  font-size: 3rem;
+}
+.ul_width {
+  width: 1200px;
+}
+button {
+  background-color: transparent;
+  border: transparent;
+}
