@@ -1,0 +1,25 @@
+.aboutApp {
+  background-color: $bg_color;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__box {
+      width: 20%;
+      text-align: center;
+      padding: 80px 0;
+      color: $header_color;
+      i {
+        font-size: 3.7rem;
+        color: $text_table_color;
+      }
+      h2 {
+        font-size: 2rem;
+        margin: 15px 0;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
