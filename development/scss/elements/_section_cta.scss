@@ -1,0 +1,52 @@
+.cta {
+height: 25rem;
+  background-color:$nav_color ;
+}
+
+.cta__row{
+
+  height: 25rem;
+display: flex;
+  justify-content: space-between;
+  padding: 10px 40px 10px 40px;
+
+
+}
+.cta__title{
+  height: 20%;
+  font-size: 1.5rem;
+  color: $screen_bg;
+  font-weight: 700;
+
+
+
+}
+.cta__text{
+  height: 10rem;
+  font-size: 1.5rem;
+  color: $screen_bg;
+
+
+}
+.ctaTitleText{
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+margin-left: 100px;
+}
+
+.cta__btn{
+display: flex;
+  justify-content: flex-end;
+ align-items: center;
+  margin-right: 40px;
+  button{
+    width: 200px;
+    height: 50px;
+    background-color: $btn_color;
+    color: $screen_bg;
+    font-weight: bold;
+
+  }
+
+}
