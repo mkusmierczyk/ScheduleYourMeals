@@ -1,0 +1,24 @@
+.aboutMe {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  .image {
+    width: 400px;
+    height: 400px;
+    background-color: #5B605F;
+  }
+}
+
+.texts {
+  width: 700px;
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #292F32;
+  }
+  p {
+    font-size: 2rem;
+    color: #292F32;
+  }
+}
