@@ -22,6 +22,7 @@ h1 {
 header {
   height: 70px;
   background-color: #292F32;
+  width: 100%;
 }
 
 nav {
@@ -39,8 +40,9 @@ nav {
 }
 
 .head {
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #292F32;
+  height: 100%;
 }
