@@ -1,0 +1,29 @@
+.news {
+  display: flex;
+  justify-content: space-between;
+  background-color: $nav_color;
+  color: white;
+  align-items: center;
+  height: 100px;
+  h3 {
+    font-size: 3.5rem;
+  }
+  form {
+    display: flex;
+    input {
+      width: 350px;
+      height: 50px;
+      font-size: 3rem;
+    }
+    button {
+      color: white;
+      background-color: $btn_color;
+      font-weight: 600;
+      width: 200px;
+      font-size: 1.5rem;
+    }
+  }
+}
+.newsletter {
+  background-color: $nav_color;
+}
