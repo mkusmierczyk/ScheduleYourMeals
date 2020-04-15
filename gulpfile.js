@@ -12,7 +12,6 @@ gulp.task("watch", function(cb) {
 gulp.task("serve", function(cb) {
   browserSync.init({
     server: "./development",
-    browser: "chrome"
   });
   gulp.watch("development/scss/**/*.scss", gulp.series("sass"));
   gulp.watch("development/*.html").on("change", browserSync.reload);

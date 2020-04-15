@@ -3,5 +3,6 @@ html {
 }
 
 body{
-  background-color: #BADA55;
+  background-color: $bg_color;
+  font-family: $text_font;
 }
