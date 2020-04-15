@@ -1,0 +1,19 @@
+.planList {
+  height: 75vh;
+  padding: 20px;
+  margin: 40px;
+  background: white;
+  &__content {
+    width: 100%;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        font-size: 2rem;
+        color: $btn_color;
+      }
+    }
+
+
+  }
+}
