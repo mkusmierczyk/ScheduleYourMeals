@@ -2,6 +2,14 @@
   color: $nav_color;
   display: flex;
   justify-content: center;
+  form {
+    border: 1px solid $nav_color;
+    border-radius: 5px;
+    width: 80%;
+    padding: 1.2rem;
+    margin: 20px 0;
+
+  }
   div {
     padding: .5rem 0;
   }
@@ -31,6 +39,7 @@
   .box3{
     font-size: 1.5rem;
     display: flex;
+    justify-content: space-between;
     .box3_1 {
       padding-right: 1rem;
     }
@@ -43,6 +52,10 @@
       }
       button {
         color: $success-color;
+        font-size: 2rem;
+      }
+      ul {
+        overflow: scroll;
       }
     }
   }
