@@ -27,7 +27,6 @@
             </div>
             <div class="col-10 center-section content__center">
                 <div class="first_entry_form">
-
                     <form>
                         <h1>Witaj,</h1>
                         <h2>wygląda na to że jesteś tutaj pierwszy raz!</h2>
@@ -35,6 +34,37 @@
                         <input type="submit" value="Gotowe!" class="first_entry_btn">
                         <h3>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)</h3>
                         <p class="error_msg">Twoje imie jest za krótkie!</p>
+                    </form>
+                </div>
+
+                <div class="new_recipe_form">
+                    <form>
+                        <div class="box1">
+                            <h1>NOWY PRZEPIS</h1>
+                            <input type="submit" class="save_quit" value="Zapisz i zamknij">
+                        </div>
+                        <div class="box2_1">
+                            <h2>Nazwa przepisu</h2>
+                            <input type="text" name="recipeName">
+                        </div>
+                        <div class="box2_2">
+                            <h2>Opis przepisu</h2>
+                            <input type="text" name="recipeDescription">
+                        </div>
+                        <div class="box3">
+                            <div class="box3_1">
+                                <h1>INSTRUKCJE</h1>
+                                <input type="text" name="recipeInstructions">
+                                <button class="add_instruction"><i class="fas fa-plus-square"></i></button>
+                                <ul class="recipeInstruction-list"></ul>
+                            </div>
+                            <div class="box3_2">
+                                <h1>SKŁADNIKI</h1>
+                                <input type="text" name="recipeIngredients">
+                                <button class="add_ingredient"><i class="fas fa-plus-square"></i></button>
+                                <ul class="recipeIngredients-list"></ul>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

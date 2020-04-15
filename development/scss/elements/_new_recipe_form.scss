@@ -1,0 +1,49 @@
+.new_recipe_form {
+  color: $nav_color;
+  display: flex;
+  justify-content: center;
+  div {
+    padding: .5rem 0;
+  }
+  .box1 {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+    border-bottom: 2px solid $text_table_color;
+    .save_quit {
+      background-color: $btn_color;
+      color: white;
+      width: 20vw;
+      border: transparent;
+      font-weight: 700;
+    }
+    h1 {
+      color: $btn_color;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+  .box2_1, .box2_2 {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .box3{
+    font-size: 1.5rem;
+    display: flex;
+    .box3_1 {
+      padding-right: 1rem;
+    }
+    .box3_1, .box3_2 {
+      h1 {
+        border-bottom: 2px solid $text_table_color;
+      }
+      input {
+        margin: .5rem 0;
+      }
+      button {
+        color: $success-color;
+      }
+    }
+  }
+}
