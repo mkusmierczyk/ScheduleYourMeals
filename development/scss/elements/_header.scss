@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Charmonman');
 
 h1 {
@@ -46,3 +47,48 @@ nav {
   background-color: #292F32;
   height: 100%;
 }
+
+body {
+  font-family: $text-font;
+}
+
+header {
+  height: 10vh;
+  background-color: $header_color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-family: $logo_font;
+  font-size: 2.5rem;
+  color: $screen_bg;
+  margin-left: 21px;
+  text-decoration: none;
+
+  span {
+    color: $btn_color;
+  }
+}
+
+.header__name {
+  color: $screen_bg;
+  font-size: 1.9rem;
+  text-align: right;
+  margin-right: 60px;
+
+  span {
+    padding-bottom: 10px;
+  }
+
+  i {
+    color: $btn_color;
+    padding: 10px;
+    font-size: 2.5rem;
+
+  }
+}
+
+
+
