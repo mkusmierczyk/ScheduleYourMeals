@@ -1,3 +1,7 @@
+.schedules{
+  width:70rem ;
+
+}
 .schedules__table{
   width: 70rem;
 }
@@ -31,4 +35,15 @@
   text-align: center;
   padding-top: 20px;
 }
+.schedules__navBar{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 4rem;
+
+}
+.schedules__navBar{
+  color: $btn_color
+}
+
 
