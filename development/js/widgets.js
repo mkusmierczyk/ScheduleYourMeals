@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
    addRecipeBtn.addEventListener("click", function (event) {
        event.preventDefault();
        //tutaj dodamy klase pokazywania popup zeby dodac przepis
+
        addRecipeBtn.classList.add("hide");
        addPlanBtn.classList.add("hide");
        widgetsInfoBox.forEach(function (element) {
