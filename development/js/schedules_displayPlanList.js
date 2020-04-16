@@ -20,6 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
    addBtn.addEventListener("click", function () {
        //przejscie do okna dodawania nowego planu
 
-   })
+   });
+
+   function getPlans() {
+
+
+   }
+
+
+
 
 });
