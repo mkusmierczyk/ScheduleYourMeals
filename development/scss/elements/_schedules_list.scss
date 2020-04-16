@@ -1,0 +1,66 @@
+.planList {
+  height: 75vh;
+  padding: 20px;
+  margin: 40px;
+  background: white;
+  &__content {
+    width: 100%;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid grey;
+      h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $btn_color;
+      }
+      button {
+        i {
+          font-size: 2.2rem;
+          color: $success_color;
+        }
+      }
+    }
+
+    &__table {
+      margin-top: 15px;
+      table {
+        width: 100%;
+        thead {
+          tr:first-child {
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+            padding: 20px 0;
+            text-align: left;
+            th {
+              font-weight: 700;
+              font-size: 1.5rem;
+            }
+          }
+        }
+        tbody {
+          overflow-y: auto;
+          tr {
+            border-bottom: 1px solid grey;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            td {
+              color: $text_table_color;
+              font-size: 1.2rem;
+              i {
+                font-size: 1.5rem;
+                cursor: pointer;
+                &:first-child {
+                  color: $warning_color;
+                }
+                &:last-child {
+                  color: $trash_color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
