@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Recipes</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css"/>
+</head>
+<body>
+
+<div class="container">
+    <header class='row'>
+        <div class='col-9 head'><a href="#" class="header__logo">Zaplanuj <span>Jedzonko </span> </a></div>
+        <div class='col-3 head'><p class="header__name"><span>Imię</span> <i class="fas fa-user-circle"></i></p></div>
+    </header>
+
+    <div class=content>
+        <div class="row">
+            <div class="col-2 content__left ">
+                <a href="#" class="col-12 content__left__menu"><p>Pulpit</p><i class="fas fa-chevron-right"></i></a>
+                <a href="#" class="col-12 content__left__menu"><p>Przepisy</p><i class="fas fa-chevron-right"></i></a>
+                <a href="#" class="col-12 content__left__menu"><p>Plany</p><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="col-10 center-section content__center">
+                <div class="new_recipe_form">
+                    <form>
+                        <div class="box1">
+                            <h1>NOWY PRZEPIS</h1>
+                            <input type="submit" class="save_quit" value="Zapisz i zamknij">
+                        </div>
+                        <div class="box2_1">
+                            <h2>Nazwa przepisu</h2>
+                            <input type="text" name="recipeName">
+                        </div>
+                        <div class="box2_2">
+                            <h2>Opis przepisu</h2>
+                            <textarea name="recipeDescription"></textarea>
+                        </div>
+                        <div class="box3">
+                            <div class="box3_1">
+                                <h1>INSTRUKCJE</h1>
+                                <input type="text" name="recipeInstructions">
+                                <button class="add_instruction"><i class="fas fa-plus-square"></i></button>
+                                <ol class="recipeInstruction-list"></ol>
+                            </div>
+                            <div class="box3_2">
+                                <h1>SKŁADNIKI</h1>
+                                <input type="text" name="recipeIngredients">
+                                <button class="add_ingredient"><i class="fas fa-plus-square"></i></button>
+                                <ol class="recipeIngredients-list"></ol>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script src="./js/app.js"></script>-->
+<script src="./js/newrecipe.js"></script>
+
+</body>
+</html>
