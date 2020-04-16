@@ -9,29 +9,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputInstruction = document.querySelector('input[name="recipeInstructions"]');
     const inputIngredient = document.querySelector('input[name="recipeIngredients"]');
 
-    let trashBtn = document.createElement('i');
-    trashBtn.classList.add('fas');
-    trashBtn.classList.add('fa-trash-alt');
-    let editBtn = document.createElement('i');
-    editBtn.classList.add('fas');
-    editBtn.classList.add('fa-edit');
-
     addIngredientBtn.addEventListener('click', function (e) {
         e.preventDefault();
+
+        let trashBtn = document.createElement('i');
+        trashBtn.classList.add('fas');
+        trashBtn.classList.add('fa-trash-alt');
+        let editBtn = document.createElement('i');
+        editBtn.classList.add('fas');
+        editBtn.classList.add('fa-edit');
 
         if (inputIngredient.value.length < 1) {
             //error msg
         } else {
             let newIngredient = document.createElement('li');
+            newIngredient.setAttribute('contenteditable', 'false');
+
             newIngredient.innerText = inputIngredient.value;
             newIngredient.appendChild(trashBtn);
             newIngredient.appendChild(editBtn);
             ingredientsList.appendChild(newIngredient);
+
+            trashBtn.addEventListener('click', function () {
+                ingredientsList.removeChild(newIngredient);
+            });
+            editBtn.addEventListener('click', function () {
+                if (newIngredient.attributes[])
+
+            });
         }
     });
-    // trashBtn.addEventListener('click', function () {
-    //     console.log('hi');
-    // });
 
     addInstructionBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -47,10 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
             //error msg
         } else {
             let newInstruction = document.createElement('li');
+            newInstruction.setAttribute('contenteditable', 'false');
+
             newInstruction.innerText = inputInstruction.value;
             newInstruction.appendChild(trashBtn);
             newInstruction.appendChild(editBtn);
             instructionList.appendChild(newInstruction);
+
+            trashBtn.addEventListener('click', function () {
+                instructionList.removeChild(newInstruction);
+            });
+            editBtn.addEventListener('click',function () {
+
+
+            });
         }
 
     });
