@@ -1,0 +1,49 @@
+.schedules{
+  width:70rem ;
+
+}
+.schedules__table{
+  width: 70rem;
+}
+
+.schedules__caption{
+
+  font-size: 1.8rem;
+  color: $btn_color;
+  height: 40px;
+  text-align: center;
+}
+
+
+.schedules__header{
+  height: 20px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: $header_color;
+  border-bottom: 1px solid $text_table_color;
+  border-top: 1px solid $text_table_color;
+  text-align: center;
+  padding: 20px 0 5px 0 ;
+}
+
+
+.schedules__table__row td {
+  height: 40px;
+  width: 100px;
+  color:$text_table_color ;
+  border-bottom: 1px solid $text_table_color;
+  text-align: center;
+  padding-top: 20px;
+}
+.schedules__navBar{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 4rem;
+
+}
+.schedules__navBar{
+  color: $btn_color
+}
+
+
