@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newIngredient.setAttribute('contenteditable', 'false');
 
             newIngredient.innerText = inputIngredient.value;
+            console.log(newIngredient.innerText);
             newIngredient.appendChild(trashBtn);
             newIngredient.appendChild(editBtn);
             ingredients.appendChild(newIngredient);
