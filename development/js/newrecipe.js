@@ -117,7 +117,11 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         newRecipe.description = description.value;
         newRecipe.title = title.value;
-        newRecipe.id = recipes.length + 1;
+        let allRecipes = JSON.parse(localStorage.getItem("recipes"));
+        if (allRecipes === null) {
+            allRecipes = [];
+        }
+        newRecipe.id = allRecipes.length + 1;
         recipes.push(newRecipe);
         saveRecipeToLS(newRecipe);
 
