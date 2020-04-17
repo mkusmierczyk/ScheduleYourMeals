@@ -8,39 +8,33 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(saveButton);
     const planDescription = document.getElementById("description");
     console.log(planDescription);
-    const mondayPlan = document.getElementById("monday").getElementsByTagName("option");
-    const tuesdayPlan = document.getElementById("tuesday").getElementsByTagName("option");
+    const mondayPlan = document.getElementById("monday").getElementsByTagName("select");
+    const tuesdayPlan = document.getElementById("tuesday").getElementsByTagName("select");
     const wednesdayPlan = document.getElementById("wednesday").getElementsByTagName("select");
     const thursdayPlan = document.getElementById("thursday").getElementsByTagName("select");
     const fridayPlan = document.getElementById("friday").getElementsByTagName("select");
     const saturdayPlan = document.getElementById("saturday").getElementsByTagName("select");
     const sundayPlan = document.getElementById("sunday").getElementsByTagName("select");
     console.log(mondayPlan);
-    // const mondayDishes = document.querySelector(".sniadanie");
-    // const tuesdayDishes = tuesdayPlan.getElementsByTagName("select");
-    // const wednesdayDishes = wednesdayPlan.getElementsByTagName("select");
-    // const thursdayDishes = thursdayPlan.getElementsByTagName("select");
-    // // const fridayDishes = fridayPlan.getElementsByTagName("select");
-    // const saturdayDishes = saturdayPlan.getElementsByTagName("select");
-    // const sundayDishes = sundayPlan.getElementsByTagName("select");
-    // console.log(fridayDishes);
 
-    // console.log(iterator);
-
-    // let random = nameDescription.value;
-    // localStorage.clear();
     saveButton.addEventListener("click", function () {
         let week = weekNumber.value;
         let name = nameDescription.value;
         let description = planDescription.value;
         let monday = mondayPlan.value;
         console.log(monday);
-        var iterator = Array.from(mondayPlan).values();
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
+
+        function getValues(plan) {
+            let propArray = [];
+            Array.from(plan).forEach(function (element) {
+                propArray.push(element.value)
+            });
+            return propArray
+        }
+
+        console.log(getValues(mondayPlan));
+        console.log(getValues(tuesdayPlan));
+
 
         let dataFromStorage = localStorage.getItem('plans');
         let plans;
@@ -53,14 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
             week: week,
             name: name,
             description: description,
-            // monday: mondayDishes
-            // monday: mondayDishes,
-            // tuesday: tuesdayDishes,
-            // wednesday: wednesdayDishes,
-            // thursday: thursdayDishes,
-            // friday: fridayDishes,
-            // saturday: saturdayDishes,
-            // sunday: sundayDishes
+            monday: getValues(mondayPlan),
+            tuesday: getValues(tuesdayPlan),
+            wednesday: getValues(wednesdayPlan),
+            thursday: getValues(thursdayPlan),
+            friday: getValues(fridayPlan),
+            saturday: getValues(saturdayPlan),
+            sunday: getValues(sundayPlan)
         }
 
         plans.push(plan);
