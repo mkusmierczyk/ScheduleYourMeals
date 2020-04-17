@@ -38,49 +38,46 @@ document.addEventListener("DOMContentLoaded", function () {
     function getRecipesfromLS() {
         tableBody.innerHTML = "";
         let allRecipes = JSON.parse(localStorage.getItem("recipes"));
+        if (allRecipes === null) {
+            allRecipes = 0;
+        }else {
+            if (allRecipes.length > 0) {
+                allRecipes.forEach(function (singleRecipe) {
+                    let newRecipeRow = document.createElement("tr");
+                    newRecipeRow.classList.add("row");
+                    let newRecipeId = document.createElement("td");
+                    newRecipeId.classList.add("col-1");
+                    let newRecipeName = document.createElement("td");
+                    newRecipeName.classList.add("col-2");
+                    let newRecipeDescription = document.createElement("td");
+                    newRecipeDescription.classList.add("col-8");
+                    let newActionElem = document.createElement("td");
+                    newActionElem.classList.add("col-1");
 
-        if (allRecipes.length > 0) {
-            allRecipes.forEach(function (singleRecipe) {
-                let newRecipeRow = document.createElement("tr");
-                newRecipeRow.classList.add("row");
-                let newRecipeId = document.createElement("td");
-                newRecipeId.classList.add("col-1");
-                let newRecipeName = document.createElement("td");
-                newRecipeName.classList.add("col-2");
-                let newRecipeDescription = document.createElement("td");
-                newRecipeDescription.classList.add("col-8");
-                let newActionElem = document.createElement("td");
-                newActionElem.classList.add("col-1");
+                    let trashBtn = document.createElement('i');
+                    trashBtn.classList.add('fas');
+                    trashBtn.classList.add('fa-trash-alt');
+                    let editBtn = document.createElement('i');
+                    editBtn.classList.add('fas');
+                    editBtn.classList.add('fa-edit');
 
-                let trashBtn = document.createElement('i');
-                trashBtn.classList.add('fas');
-                trashBtn.classList.add('fa-trash-alt');
-                let editBtn = document.createElement('i');
-                editBtn.classList.add('fas');
-                editBtn.classList.add('fa-edit');
+                    newActionElem.appendChild(editBtn);
+                    newActionElem.appendChild(trashBtn);
 
-                newActionElem.appendChild(editBtn);
-                newActionElem.appendChild(trashBtn);
+                    newRecipeId.innerText = singleRecipe.id;
+                    newRecipeName.innerText = singleRecipe.title;
+                    newRecipeDescription.innerText = singleRecipe.description;
 
-                newRecipeId.innerText = singleRecipe.id;
-                newRecipeName.innerText = singleRecipe.title;
-                newRecipeDescription.innerText = singleRecipe.description;
+                    newRecipeRow.appendChild(newRecipeId);
+                    newRecipeRow.appendChild(newRecipeName);
+                    newRecipeRow.appendChild(newRecipeDescription);
+                    newRecipeRow.appendChild(newActionElem);
 
-                newRecipeRow.appendChild(newRecipeId);
-                newRecipeRow.appendChild(newRecipeName);
-                newRecipeRow.appendChild(newRecipeDescription);
-                newRecipeRow.appendChild(newActionElem);
-
-                tableBody.appendChild(newRecipeRow);
-
-
-            })
+                    tableBody.appendChild(newRecipeRow);
+                })
+            }
         }
     }
-
-
-
-
 
 
 
