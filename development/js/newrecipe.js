@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    const form = document.querySelector('.new_recipe_form form');
 
     const tableBody = document.querySelector("tbody");
     const addNewRecipeBtn = document.querySelector('.save_quit'); //btn dodaje przepis do planu i zamyka okno nowy przepis
@@ -152,6 +152,11 @@ document.addEventListener("DOMContentLoaded", function () {
         newRecipeRow.appendChild(newActionElem);
 
         tableBody.appendChild(newRecipeRow);
+        form.reset();
+        ingredients.innerHTML = '';
+        instructions.innerHTML = '';
+
+
 
     });
 
