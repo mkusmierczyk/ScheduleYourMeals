@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(saveButton);
     const planDescription = document.getElementById("description");
     console.log(planDescription);
-    const mondayPlan = document.getElementById("monday").getElementsByTagName("option");
-    const tuesdayPlan = document.getElementById("tuesday").getElementsByTagName("option");
+    const mondayPlan = document.getElementById("monday").getElementsByTagName("select");
+    const tuesdayPlan = document.getElementById("tuesday").getElementsByTagName("select");
     const wednesdayPlan = document.getElementById("wednesday").getElementsByTagName("select");
     const thursdayPlan = document.getElementById("thursday").getElementsByTagName("select");
     const fridayPlan = document.getElementById("friday").getElementsByTagName("select");
@@ -30,17 +30,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // let random = nameDescription.value;
     // localStorage.clear();
     saveButton.addEventListener("click", function () {
+
+        //patryk:
+       function getValues(plan) {
+           let propArray =[];
+           Array.from(plan).forEach(function (element) {
+               propArray.push(element.value)
+           });
+           return propArray
+       }
+
+       getValues(mondayPlan);
+
+
         let week = weekNumber.value;
         let name = nameDescription.value;
         let description = planDescription.value;
-        let monday = mondayPlan.value;
-        console.log(monday);
-        var iterator = Array.from(mondayPlan).values();
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
-        console.log(iterator.next().value);
 
         let dataFromStorage = localStorage.getItem('plans');
         let plans;
