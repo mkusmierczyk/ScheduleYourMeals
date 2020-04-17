@@ -86,9 +86,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     });
+    let recipes =[];
 
     let saveRecipeToLS = function (newObject) {
         let dataFromLocalStorage = [];
+        recipes.push(newObject);
         if (localStorage.getItem('newRecipe')!=null) {
             dataFromLocalStorage = JSON.parse(localStorage.getItem('newRecipe'));
             dataFromLocalStorage.push(newObject);
@@ -101,12 +103,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     addNewRecipeBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        newRecipe.id = localStorage.recipes.length+1;
+        newRecipe.id = recipes.length+1;
+        console.log(newRecipe.id);
         newRecipe.description = description.value;
         newRecipe.title = title.value;
         saveRecipeToLS(newRecipe);
-
-
     });
 
 
