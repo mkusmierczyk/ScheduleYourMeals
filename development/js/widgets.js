@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         //tutaj doademy klase pokazywania popup zeby dodac plan
         addRecipeBtn.classList.add("hide");
-        addPlanBtn.classList.add("hide")
+        addPlanBtn.classList.add("hide");
         widgetsInfoBox.forEach(function (element) {
             element.classList.add("hide");
             window.location.href = 'schedules.html';

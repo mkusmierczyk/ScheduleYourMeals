@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    const tableBody = document.querySelector("tbody");
     const addNewRecipeBtn = document.querySelector('.save_quit'); //btn dodaje przepis do planu i zamyka okno nowy przepis
 
     const addInstructionBtn = document.querySelector('.add_instruction');
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+
     addInstructionBtn.addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -86,13 +87,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     });
+
     let recipes =[];
+    let dataFromLocalStorage = [];
 
     let saveRecipeToLS = function (newObject) {
-        let dataFromLocalStorage = [];
-        recipes.push(newObject);
-        if (localStorage.getItem('newRecipe')!=null) {
-            dataFromLocalStorage = JSON.parse(localStorage.getItem('newRecipe'));
+        if (localStorage.getItem('recipes')!=null) {
+            dataFromLocalStorage = JSON.parse(localStorage.getItem('recipes'));
             dataFromLocalStorage.push(newObject);
             localStorage.setItem('recipes', JSON.stringify(dataFromLocalStorage));
         } else {
@@ -101,13 +102,47 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     };
+
     addNewRecipeBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        newRecipe.id = recipes.length+1;
-        console.log(newRecipe.id);
         newRecipe.description = description.value;
         newRecipe.title = title.value;
+        newRecipe.id = recipes.length + 1;
+        recipes.push(newRecipe);
         saveRecipeToLS(newRecipe);
+
+        let newRecipeRow = document.createElement("tr");
+        newRecipeRow.classList.add("row");
+        let newRecipeId = document.createElement("td");
+        newRecipeId.classList.add("col-1");
+        let newRecipeName = document.createElement("td");
+        newRecipeName.classList.add("col-2");
+        let newRecipeDescription = document.createElement("td");
+        newRecipeDescription.classList.add("col-8");
+        let newActionElem = document.createElement("td");
+        newActionElem.classList.add("col-1");
+
+        let trashBtn = document.createElement('i');
+        trashBtn.classList.add('fas');
+        trashBtn.classList.add('fa-trash-alt');
+        let editBtn = document.createElement('i');
+        editBtn.classList.add('fas');
+        editBtn.classList.add('fa-edit');
+
+        newActionElem.appendChild(editBtn);
+        newActionElem.appendChild(trashBtn);
+
+        newRecipeId.innerText = newRecipe.id;
+        newRecipeName.innerText = title.value;
+        newRecipeDescription.innerText = description.value;
+
+        newRecipeRow.appendChild(newRecipeId);
+        newRecipeRow.appendChild(newRecipeName);
+        newRecipeRow.appendChild(newRecipeDescription);
+        newRecipeRow.appendChild(newActionElem);
+
+        tableBody.appendChild(newRecipeRow);
+
     });
 
 
