@@ -3,9 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
     let btnSubmit = document.querySelector('.first_entry_btn');
     let name = document.querySelector('input[value][type="text"]');
     let errorMsg = document.querySelector('.error_msg');
-    let nameSpan = document.querySelector('.header__name span');
-    let form = document.querySelector('.first_entry_form');
 
+    let nameSpan = $.get('main.html', null, function(tag){
+        alert($(tag).find('.header__name span'));
+    });
+    console.log(nameSpan);
+
+
+    let form = document.querySelector('.first_entry_form');
+    console.log(form);
     form.classList.add('hide');
 
         //jeżeli w local storage zapisane zostało imię pozostaw formularz niewidoczny i zmień imię w navie

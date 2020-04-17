@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
        addPlanBtn.classList.add("hide");
        widgetsInfoBox.forEach(function (element) {
            element.classList.add("hide");
+           window.location.href = 'recipes.html';
        })
    });
 
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         addPlanBtn.classList.add("hide")
         widgetsInfoBox.forEach(function (element) {
             element.classList.add("hide");
+            window.location.href = 'schedules.html';
         })
     });
 
