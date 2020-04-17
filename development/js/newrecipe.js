@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const ingredients = document.querySelector('.recipeIngredients-list');
     const instructions = document.querySelector('.recipeInstruction-list');
 
-
     const newRecipe = {
         id: '',
         title: '',
@@ -154,7 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
         newRecipeRow.appendChild(newRecipeDescription);
         newRecipeRow.appendChild(newActionElem);
 
+        window.location.href = 'recipes.html';
+
         tableBody.appendChild(newRecipeRow);
+
         form.reset();
         ingredients.innerHTML = '';
         instructions.innerHTML = '';
