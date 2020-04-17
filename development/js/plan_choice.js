@@ -37,25 +37,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
             wednesday[counter].innerText = meal;
             counter++
-        })
+        });
         counter = 0;
         week.thursday.forEach(function (meal) {
 
             thursday[counter].innerText = meal;
             counter++
-        })
+        });
         counter = 0;
         week.friday.forEach(function (meal) {
 
             friday[counter].innerText = meal;
             counter++
-        })
+        });
         counter = 0;
         week.saturday.forEach(function (meal) {
 
             saturday[counter].innerText = meal;
             counter++
-        })
+        });
         counter = 0;
         week.sunday.forEach(function (meal) {
 
