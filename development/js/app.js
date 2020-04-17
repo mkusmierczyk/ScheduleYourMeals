@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let userName = nameInput.value;
                 localStorage.setItem("name", userName);
                 window.location.href = 'recipes.html'; //do odswieżenia po zapisaniu imienia do spana
+
             }
         });
 });

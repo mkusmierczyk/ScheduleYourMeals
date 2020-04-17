@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const addBtn = document.querySelector("button i");
 
     editBtn.addEventListener("click", function () {
-        //przejscie do edycji, wyświetleie popup edycji
+        window.location.href = 'schedules.html';
+      //  this.parentElement.parentElement.contentEditable = "true";
+        //localStorage.setItem('nazwa_polaLocalS, userName)
     });
 
     deleteBtn.addEventListener("click", function () {
-        //new whole row add class hide
-
+        this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
+       // localStorage.removeItem('keyName')  dodać nazwę local storage
     });
 
     addBtn.addEventListener("click", function () {
@@ -26,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     }
-
-
 
 
 });
