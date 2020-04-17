@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //     //przejscie do edycji, wyświetleie popup edycji
     // });
 
+
     // deleteBtn.addEventListener("click", function () {
     //     //new whole row add class hide
     //
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     addBtn.addEventListener("click", function () {
         //przejscie do okna dodawania nowego planu
-
+        window.location.href = 'newrecipe.html';
     });
 
     getRecipesfromLS();
