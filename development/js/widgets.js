@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
    const recipesNumberSpan = document.querySelector("#numberOfRecipes");
    const recipesWordSpan = document.querySelector("#recipesWord");
 
-   const newRecipeForm = document.querySelector('.new_recipe_form');
    // recipesNumberSpan.innerHTML = //tutaj będzie liczba przepisów
 
     if (recipesNumberSpan.innerText == 1) {
@@ -21,23 +20,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     //to wyżej jeszcze do dopracowania
 
-    newRecipeForm.classList.add("hide");
-
    addRecipeBtn.addEventListener("click", function (event) {
        event.preventDefault();
        //tutaj dodamy klase pokazywania popup zeby dodac przepis
+       window.location.href = 'newRecipe.html';
+
        newRecipeForm.classList.remove("hide");
        addRecipeBtn.classList.add("hide");
        addPlanBtn.classList.add("hide");
        widgetsInfoBox.forEach(function (element) {
            element.classList.add("hide");
-           window.location.href = 'recipes.html';
+           // window.location.href = 'recipes.html';
        })
    });
 
     addPlanBtn.addEventListener("click", function (event) {
         event.preventDefault();
         //tutaj doademy klase pokazywania popup zeby dodac plan
+
         addRecipeBtn.classList.add("hide");
         addPlanBtn.classList.add("hide");
         widgetsInfoBox.forEach(function (element) {
