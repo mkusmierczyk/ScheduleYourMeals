@@ -1,42 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     let btnSubmit = document.querySelector('.first_entry_btn');
-    let name = document.querySelector('input[value][type="text"]');
+    let nameInput = document.querySelector('input[value][type="text"]');
     let errorMsg = document.querySelector('.error_msg');
 
-    let nameSpan = $.get('main.html', null, function(tag){
-        alert($(tag).find('.header__name span'));
-    });
-    console.log(nameSpan);
-
-
-    let form = document.querySelector('.first_entry_form');
-    console.log(form);
-    form.classList.add('hide');
-
-        //jeżeli w local storage zapisane zostało imię pozostaw formularz niewidoczny i zmień imię w navie
+    //jeżeli w local storage zapisane zostało imię pozostaw formularz niewidoczny i zmień imię w navie
         if (localStorage.getItem('name')!=null) {
-            nameSpan.innerHTML = localStorage.getItem('name');
-            console.log(localStorage.name);
+            window.location.href = 'recipes.html';
         } else {
-            //odkryj formularz
-            form.classList.remove('hide');
+
         }
+
         errorMsg.classList.add('visible');
 
         btnSubmit.addEventListener('click', function (e) {
             e.preventDefault();
-            if (name.value.length < 3) {
+            if (nameInput.value.length < 3) {
                 errorMsg.classList.remove('visible');
             } else {
                 errorMsg.classList.toggle('visible');
                 //zapisz imię w local storage
-                let userName = name.value;
+                let userName = nameInput.value;
                 localStorage.setItem("name", userName);
-                //zmień imię w navie
-                nameSpan.innerHTML = localStorage.getItem('name');
-                //ukryj formularz
-                form.classList.add('hide');
+                window.location.href = 'recipes.html'; //do odswieżenia po zapisaniu imienia do spana
             }
         });
 });
