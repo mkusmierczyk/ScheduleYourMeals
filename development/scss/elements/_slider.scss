@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: center;
 }
+.section1 {
+  background-color: $bg_color;
+}
 
 .slider h1, .slider p {
   font-family: $text_font;

@@ -47,10 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
             newRecipe.ingredients.push(newIngredient.innerText);
 
             trashBtn.addEventListener('click', function () {
-                ingredientsList.removeChild(newIngredient);
+                ingredients.removeChild(newIngredient);
             });
             editBtn.addEventListener('click', function () {
-                // if (newIngredient.attributes[])
+                if (newIngredient.getAttribute('contenteditable')==='false') {
+                    newIngredient.setAttribute('contenteditable', 'true');
+                } else {
+                    newIngredient.setAttribute('contenteditable', 'false');
+                }
             });
         }
     });
@@ -80,10 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
             newRecipe.instruction.push(newInstruction.innerText);
 
             trashBtn.addEventListener('click', function () {
-                instructionList.removeChild(newInstruction);
+                instructions.removeChild(newInstruction);
             });
             editBtn.addEventListener('click',function () {
-                //<-------
+                if (newIngredient.getAttribute('contenteditable')==='false') {
+                    newIngredient.setAttribute('contenteditable', 'true');
+                } else {
+                    newIngredient.setAttribute('contenteditable', 'false');
+                }
             });
         }
     });
