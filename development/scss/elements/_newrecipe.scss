@@ -8,9 +8,10 @@
     width: 80%;
     padding: 1.2rem;
     margin: 20px 0;
-    background-color: $bg_color;
-
-
+    background-color: $screen_bg;
+  }
+  input {
+    font-size: 1rem;
   }
   div {
     padding: .5rem 0;
@@ -37,15 +38,36 @@
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
+    input {
+      width: 70%;
+    }
+    textarea {
+      width: 70%;
+      font-size: 1rem;
+    }
   }
   .box3{
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
+    input {
+      width: 70%;
+    }
+
+    .box3_2 {
+      .recipeIngredients-list{
+        list-style-type: circle;
+      }
+    }
     .box3_1 {
       padding-right: 1rem;
+      .recipeInstruction-list{
+        list-style-type: decimal;
+      }
     }
     .box3_1, .box3_2 {
+      width: 50%;
+
       h1 {
         border-bottom: 2px solid $text_table_color;
       }
@@ -56,9 +78,22 @@
         color: $success-color;
         font-size: 2rem;
       }
-      ul {
+      ol {
+        font-size: 1.3rem;
+        max-height: 20vh;
         overflow: scroll;
+        i.fa-trash-alt {
+          color: $trash_color;
+          padding: 0 2px;
+        }
+        i.fa-edit {
+          color: $warning_color;
+          padding: 0 2px;
+        }
       }
     }
   }
+}
+.hide {
+  display: none;
 }
