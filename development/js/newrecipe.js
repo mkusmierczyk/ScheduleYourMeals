@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ingredientsList.removeChild(newIngredient);
             });
             editBtn.addEventListener('click', function () {
-                if (newIngredient.attributes[])
+                // if (newIngredient.attributes[])
 
             });
         }
