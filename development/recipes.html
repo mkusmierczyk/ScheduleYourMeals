@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -42,7 +43,39 @@
     </form>
 </div>
 
+<section class="recipesList">
+    <div class="recipesList__content container">
+        <div class="recipesList__content__header">
+            <h2>Lista Przepisów</h2>
+            <button><i class="fas fa-plus-square"></i></button>
+        </div>
+        <div class="recipesList__content__table">
+            <table>
+                <thead>
+                <tr class="row">
+                    <th class="col-1">Id</th>
+                    <th class="col-2">Nazwa</th>
+                    <th class="col-8">Opis</th>
+                    <th class="col-1">Akcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="row">
+                    <td class="col-1">1</td>
+                    <td class="col-2">Jakis tam przepis jakis</td>
+                    <td class="col-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos est exercitationem hic illum nemo sit veniam voluptatum. Doloribus dolorum enim exercitationem ipsam magni nam obcaecati quo sunt ullam veniam. Delectus?</td>
+                    <td class="col-1">
+                        <i class="far fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
 
-
+<script src="js/recipes_displayRecipesList.js"></script>
 </body>
+
 </html>
