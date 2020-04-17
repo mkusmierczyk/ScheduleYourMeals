@@ -150,14 +150,13 @@ document.addEventListener("DOMContentLoaded", function () {
         newRecipeRow.appendChild(newRecipeDescription);
         newRecipeRow.appendChild(newActionElem);
 
+        window.location.href = 'recipes.html';
+
         tableBody.appendChild(newRecipeRow);
 
         form.reset();
         ingredients.innerHTML = '';
         instructions.innerHTML = '';
-
-        //powrót do okna recipes.html
-        window.location.href = 'recipes.html';
 
     });
 
