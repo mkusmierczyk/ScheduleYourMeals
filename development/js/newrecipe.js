@@ -98,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    let recipes =[];
     let dataFromLocalStorage = [];
 
     let saveRecipeToLS = function (newObject) {
@@ -122,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             allRecipes = [];
         }
         newRecipe.id = allRecipes.length + 1;
-        recipes.push(newRecipe);
+
         saveRecipeToLS(newRecipe);
 
         let newRecipeRow = document.createElement("tr");
@@ -160,11 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ingredients.innerHTML = '';
         instructions.innerHTML = '';
 
-
-
     });
-
-
 
 
 });
