@@ -18,12 +18,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const sundayPlan = document.getElementById("sunday").getElementsByTagName("select");
         console.log(mondayPlan);
         console.log(allSelects);
+            // pobranie przepisów z LS
+        let fromRecipes = JSON.parse(localStorage.getItem("recipes"));
+        console.log(fromRecipes);//sprawdzam czy pobrało przepsy z ls
 
-        let przepisy = ["kiełba", "ogór", "jajecznica", "tosty", "ser"];
-        console.log(przepisy);
 
+        let recipes = [];
+        fromRecipes.forEach(function (element) {
+
+            let title = element.title;
+            recipes.push(title);
+            return recipes;
+        })
+
+        let przepisy = ["kiełba", "ogór", "jajecznica", "tosty", "ser"];//to było tylko do testowania dodawania dań do selectów
+        console.log(przepisy);//sprawdzenie
+                // dodanie do selectów listy dań z jakiejś tablicy w tym wypadku z recipes
         allSelects.forEach(function (select) {
-            przepisy.forEach(function (element) {
+            recipes.forEach(function (element) {
                 let option = document.createElement("option");
                 option.innerHTML = element;
                 select.appendChild(option)
