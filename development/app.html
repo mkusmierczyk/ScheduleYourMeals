@@ -11,176 +11,120 @@
     <link rel="stylesheet" href="./css/main.css"/>
 </head>
 <body>
-
-<div class="container">
-    <header class='row'>
-        <div class='col-9 head'><a href="#" class="header__logo">Zaplanuj <span>Jedzonko </span> </a></div>
-        <div class='col-3 head'><p class="header__name"><span>Imię</span> <i class="fas fa-user-circle"></i></p></div>
-    </header>
-
-    <div class=content>
-        <div class="row">
-            <div class="col-2 content__left ">
-                <a href="#" class="col-12 content__left__menu"><p>Pulpit</p><i class="fas fa-chevron-right"></i></a>
-                <a href="#" class="col-12 content__left__menu"><p>Przepisy</p><i class="fas fa-chevron-right"></i></a>
-                <a href="#" class="col-12 content__left__menu"><p>Plany</p><i class="fas fa-chevron-right"></i></a>
+<div class="col-10 center-section content__center">
+    <section class="widgets">
+        <div class="widgets__content">
+            <div class="widgets__content__box">
+                <i class="far fa-plus-square"><a href="#"></a></i>
+                <span>dodaj przepis</span>
             </div>
-            <div class="col-10 center-section content__center">
-                <section class="widgets">
-                    <div class="widgets__content">
-                        <div class="widgets__content__box">
-                            <i class="far fa-plus-square"><a href="#"></a></i>
-                            <span>dodaj przepis</span>
-                        </div>
-                        <div class="widgets__content__box">
-                            <i class="far fa-plus-square"><a href="#"></a></i>
-                            <span>dodaj plan</span>
-                        </div>
-                    </div>
-                    <div class="widgets__info">
-                        <div class="widgets__info__box">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Masz już<span id="numberOfRecipes"></span> <span id="recipesWord"></span>, nieźle!</span>
-                            <button>
-                                <i class="fas fa-times-circle"></i>
-                            </button>
-                        </div>
-                        <div class="widgets__info__box">
-                            <i class="fas fa-exclamation-circle"></i>
-                            <span>Pamiętaj, aby dodać plan!</span>
-                            <button>
-                                <i class="fas fa-times-circle"></i>
-                            </button>
-                        </div>
-                        <div class="widgets__info__box">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Świetnie że jesteś! Udanego planowania i smacznego! :)</span>
-                            <button>
-                                <i class="fas fa-times-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="first_entry_form">
-                    <form>
-                        <h1>Witaj,</h1>
-                        <h2>wygląda na to że jesteś tutaj pierwszy raz!</h2>
-                        <input type="text" name="first_name" value="" class="name_input" placeholder="tutaj wpisz swoje imię"><br>
-                        <input type="submit" value="Gotowe!" class="first_entry_btn">
-                        <h3>Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację :)</h3>
-                        <p class="error_msg">Twoje imie jest za krótkie!</p>
-                    </form>
-                </div>
-
-                <div class="new_recipe_form">
-                    <form>
-                        <div class="box1">
-                            <h1>NOWY PRZEPIS</h1>
-                            <input type="submit" class="save_quit" value="Zapisz i zamknij">
-                        </div>
-                        <div class="box2_1">
-                            <h2>Nazwa przepisu</h2>
-                            <input type="text" name="recipeName">
-                        </div>
-                        <div class="box2_2">
-                            <h2>Opis przepisu</h2>
-                            <textarea name="recipeDescription"></textarea>
-                        </div>
-                        <div class="box3">
-                            <div class="box3_1">
-                                <h1>INSTRUKCJE</h1>
-                                <input type="text" name="recipeInstructions">
-                                <button class="add_instruction"><i class="fas fa-plus-square"></i></button>
-                                <ul class="recipeInstruction-list"></ul>
-                            </div>
-                            <div class="box3_2">
-                                <h1>SKŁADNIKI</h1>
-                                <input type="text" name="recipeIngredients">
-                                <button class="add_ingredient"><i class="fas fa-plus-square"></i></button>
-                                <ul class="recipeIngredients-list"></ul>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="schedules">
-                    <table class="schedules__table">
-                        <caption class="schedules__caption ">Twój Plan na {nr_tygodnia} tydzień:</caption>
-                        <tr class="schedules__header ">
-                            <th class="schedules__header schedules__monday">Poniedziałek
-                            <th class="schedules__header schedules__tuesday">Wtorek</th>
-                            <th class="schedules__header schedules__wednesday">Środa</th>
-                            <th class="schedules__header schedules__thursday">Czwartek</th>
-                            <th class="schedules__header schedules__friday">Piątek</th>
-                            <th class="schedules__header schedules__saturday">Sobota</th>
-                            <th class="schedules__header schedules__sunday">Niedziela</th>
-
-                        </tr>
-                        <tr class="schedules__breakfest schedules__table__row ">
-                            <td class="schedules__breakfest__monday">Śniadanie</td>
-                            <td class="schedules__breakfest__tuesday">Śniadanie</td>
-                            <td class="schedules__breakfest__wednesday">Śniadanie</td>
-                            <td class="schedules__breakfest__thursday">Śniadanie</td>
-                            <td class="schedules__breakfest__friday">Śniadanie</td>
-                            <td class="schedules__breakfest__saturday">Śniadanie</td>
-                            <td class="schedules__breakfest__sunday">Śniadanie</td>
-
-                        </tr>
-                        <tr class="schedules__secondBreakfast schedules__table__row ">
-                            <td class="schedules__secondBreakfast__monday">Drugie Śniadanie</td>
-                            <td class="schedules__secondBreakfast__tuesday">Drugie Śniadanie</td>
-                            <td class="schedules__secondBreakfast__wednesday">Drugie Śniadanie</td>
-                            <td class="schedules__secondBreakfast__thursday"> Drugie Śniadanie</td>
-                            <td class="schedules__secondBreakfast__friday">Drugie Śniadanie</td>
-                            <td class="schedules__secondBreakfast__saturday">Drugie Śniadanie</td>
-                            <td class="schedules__secondBreakfast__sunday">Drugie Śniadanie</td>
-
-                        </tr>
-                        <tr class="schedules__soup schedules__table__row ">
-                            <td class="schedules__soup__monday">Zupa</td>
-                            <td class="schedules__soup__tuesday">Zupa</td>
-                            <td class="schedules__soup__wednesday">Zupa</td>
-                            <td class="schedules__soup__thursday">Zupa</td>
-                            <td class="schedules__soup__friday">Zupa</td>
-                            <td class="schedules__soup__saturday">Zupa</td>
-                            <td class="schedules__soup__sunday">Zupa</td>
-
-                        </tr>
-                        <tr class="schedules__mainDish schedules__table__row ">
-                            <td class="schedules__mainDish__monday">Drugie Danie</td>
-                            <td class="schedules__mainDish__tuesday">Drugie Danie</td>
-                            <td class="schedules__mainDish__wednesday">Drugie Danie</td>
-                            <td class="schedules__mainDish__thursday">Drugie Danie</td>
-                            <td class="schedules__mainDish__friday">Drugie Danie</td>
-                            <td class="schedules__mainDish__saturday">Drugie Danie</td>
-                            <td class="schedules__mainDish__sunday">Drugie Danie</td>
-
-
-                        </tr>
-                        <tr class="schedules__supper schedules__table__row ">
-                            <td class="schedules__supper__monday">Kolacja</td>
-                            <td class="schedules__supper__tuesday">Kolacja</td>
-                            <td class="schedules__supper__wednesday">Kolacja</td>
-                            <td class="schedules__supper__thursday">Kolacja</td>
-                            <td class="schedules__supper__friday">Kolacja</td>
-                            <td class="schedules__supper__saturday">Kolacja</td>
-                            <td class="schedules__supper__sunday">Kolacja</td>
-                        </tr>
-                    </table>
-                    <div class = "schedules__navBar">
-                        <button class="schedules__navBar"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>Poprzedni </button>
-                        <button class="schedules__navBar">Następny  <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i></button>
-                    </div>
-
-                </div>
+            <div class="widgets__content__box">
+                <i class="far fa-plus-square"><a href="#"></a></i>
+                <span>dodaj plan</span>
             </div>
         </div>
+        <div class="widgets__info">
+            <div class="widgets__info__box">
+                <i class="fas fa-info-circle"></i>
+                <span>Masz już<span id="numberOfRecipes"></span> <span id="recipesWord"></span>, nieźle!</span>
+                <button>
+                    <i class="fas fa-times-circle"></i>
+                </button>
+            </div>
+            <div class="widgets__info__box">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>Pamiętaj, aby dodać plan!</span>
+                <button>
+                    <i class="fas fa-times-circle"></i>
+                </button>
+            </div>
+            <div class="widgets__info__box">
+                <i class="fas fa-check-circle"></i>
+                <span>Świetnie że jesteś! Udanego planowania i smacznego! :)</span>
+                <button>
+                    <i class="fas fa-times-circle"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="schedules">
+        <table class="schedules__table">
+            <caption class="schedules__caption ">Twój Plan na {nr_tygodnia} tydzień:</caption>
+            <tr class="schedules__header ">
+                <th class="schedules__header schedules__monday">Poniedziałek
+                <th class="schedules__header schedules__tuesday">Wtorek</th>
+                <th class="schedules__header schedules__wednesday">Środa</th>
+                <th class="schedules__header schedules__thursday">Czwartek</th>
+                <th class="schedules__header schedules__friday">Piątek</th>
+                <th class="schedules__header schedules__saturday">Sobota</th>
+                <th class="schedules__header schedules__sunday">Niedziela</th>
+
+            </tr>
+            <tr class="schedules__breakfest schedules__table__row ">
+                <td class="schedules__breakfest__monday">Śniadanie</td>
+                <td class="schedules__breakfest__tuesday">Śniadanie</td>
+                <td class="schedules__breakfest__wednesday">Śniadanie</td>
+                <td class="schedules__breakfest__thursday">Śniadanie</td>
+                <td class="schedules__breakfest__friday">Śniadanie</td>
+                <td class="schedules__breakfest__saturday">Śniadanie</td>
+                <td class="schedules__breakfest__sunday">Śniadanie</td>
+
+            </tr>
+            <tr class="schedules__secondBreakfast schedules__table__row ">
+                <td class="schedules__secondBreakfast__monday">Drugie Śniadanie</td>
+                <td class="schedules__secondBreakfast__tuesday">Drugie Śniadanie</td>
+                <td class="schedules__secondBreakfast__wednesday">Drugie Śniadanie</td>
+                <td class="schedules__secondBreakfast__thursday"> Drugie Śniadanie</td>
+                <td class="schedules__secondBreakfast__friday">Drugie Śniadanie</td>
+                <td class="schedules__secondBreakfast__saturday">Drugie Śniadanie</td>
+                <td class="schedules__secondBreakfast__sunday">Drugie Śniadanie</td>
+
+            </tr>
+            <tr class="schedules__soup schedules__table__row ">
+                <td class="schedules__soup__monday">Zupa</td>
+                <td class="schedules__soup__tuesday">Zupa</td>
+                <td class="schedules__soup__wednesday">Zupa</td>
+                <td class="schedules__soup__thursday">Zupa</td>
+                <td class="schedules__soup__friday">Zupa</td>
+                <td class="schedules__soup__saturday">Zupa</td>
+                <td class="schedules__soup__sunday">Zupa</td>
+
+            </tr>
+            <tr class="schedules__mainDish schedules__table__row ">
+                <td class="schedules__mainDish__monday">Drugie Danie</td>
+                <td class="schedules__mainDish__tuesday">Drugie Danie</td>
+                <td class="schedules__mainDish__wednesday">Drugie Danie</td>
+                <td class="schedules__mainDish__thursday">Drugie Danie</td>
+                <td class="schedules__mainDish__friday">Drugie Danie</td>
+                <td class="schedules__mainDish__saturday">Drugie Danie</td>
+                <td class="schedules__mainDish__sunday">Drugie Danie</td>
+
+
+            </tr>
+            <tr class="schedules__supper schedules__table__row ">
+                <td class="schedules__supper__monday">Kolacja</td>
+                <td class="schedules__supper__tuesday">Kolacja</td>
+                <td class="schedules__supper__wednesday">Kolacja</td>
+                <td class="schedules__supper__thursday">Kolacja</td>
+                <td class="schedules__supper__friday">Kolacja</td>
+                <td class="schedules__supper__saturday">Kolacja</td>
+                <td class="schedules__supper__sunday">Kolacja</td>
+            </tr>
+        </table>
+        <div class = "schedules__navBar">
+            <button class="schedules__navBar prev"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>Poprzedni </button>
+            <button class="schedules__navBar next">Następny  <i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i></button>
+        </div>
+
     </div>
 </div>
 
-
-
 <script src="./js/widgets.js"></script>
-<script src="./js/app.js"></script>
+<script src="js/plan_choice.js"></script>
+
 </body>
 </html>

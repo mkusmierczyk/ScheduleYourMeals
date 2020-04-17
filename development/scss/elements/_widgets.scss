@@ -1,13 +1,12 @@
 .widgets {
-  width: 100%;
+  width: 80%;
   height: 300px;
-  position: absolute;
   display: flex;
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 50%;
     height: 100%;
     &__box {
       font-size: 1.6rem;
