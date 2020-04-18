@@ -104,10 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     instructions.removeChild(newInstruction);
                 });
                 editBtn.addEventListener('click', function () {
-                    if (newIngredient.getAttribute('contenteditable') === 'false') {
-                        newIngredient.setAttribute('contenteditable', 'true');
+                    if (newInstruction.getAttribute('contenteditable') === 'false') {
+                        newInstruction.setAttribute('contenteditable', 'true');
                     } else {
-                        newIngredient.setAttribute('contenteditable', 'false');
+                        newInstruction.setAttribute('contenteditable', 'false');
                     }
                 });
             }
