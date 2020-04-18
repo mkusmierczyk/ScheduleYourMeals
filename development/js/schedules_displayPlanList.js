@@ -1,12 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-   //new whole row
-   //new td with Id iteration
-   //new td with localstorage.planName
-   //new td with localstorage.planDescription
-   // new td with localstorage.weekNumber
    const tableBody = document.querySelector("tbody");
-   const editBtn = document.querySelector("td i:first-child");
-   const deleteBtn = document.querySelector("td i:last-child");
    const addBtn = document.querySelector("button i");
 
    addBtn.addEventListener("click", function () {
@@ -16,13 +9,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
    getPlansfromLS();
 
-   editBtn.addEventListener("click", function () {
-      //przejscie do edycji, wyświetleie popup edycji
+   const editBtn = document.querySelectorAll(".fa-edit");
+   editBtn.forEach(function (singleEditBtn) {
+      singleEditBtn.addEventListener("click", function () {
+         console.log("elo");
+         const popup = document.createElement("span");
+         popup.innerText = "Gotowe do edycji!";
+         popup.classList.add("popupEdit");
+         this.parentElement.appendChild(popup);
+
+
+      })
+
    });
 
-   deleteBtn.addEventListener("click", function () {
-      //new whole row add class hide
 
+
+
+
+
+   const deleteBtn = document.querySelectorAll(".fa-trash-alt");
+
+   deleteBtn.forEach(function (singleDeleteBtn) {
+      console.log("elo");
+      singleDeleteBtn.addEventListener("click", function () {
+         this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
+
+         let allplans = JSON.parse(localStorage.getItem("plans"));
+         allplans.forEach(function (plan) {
+            let planName = singleDeleteBtn.parentElement.parentElement.firstChild.nextSibling;
+            if (plan === null) {
+            }else {
+               if (plan.name === planName.innerText) {
+                  delete allplans[allplans.indexOf(plan)];
+                  window.localStorage.plans = JSON.stringify(allplans);
+               }
+            }
+         })
+      });
    });
 
 
@@ -58,27 +82,28 @@ document.addEventListener("DOMContentLoaded", function () {
             newAction.appendChild(editBtn);
             newAction.appendChild(trashBtn);
 
-
             newPlanId.innerText = i;
             i ++;
 
-            newPlanName.innerText = singlePlan.name;
-            newPlanDescription.innerText = singlePlan.description;
-            newPlanWeek.innerText = singlePlan.week;
+            if (singlePlan === null) {
 
-            newPlanRow.appendChild(newPlanId);
-            newPlanRow.appendChild(newPlanName);
-            newPlanRow.appendChild(newPlanDescription);
-            newPlanRow.appendChild(newPlanWeek);
-            newPlanRow.appendChild(newAction);
+            } else {
+               newPlanName.innerText = singlePlan.name;
+               newPlanDescription.innerText = singlePlan.description;
+               newPlanWeek.innerText = singlePlan.week;
 
-            tableBody.appendChild(newPlanRow);
+               newPlanRow.appendChild(newPlanId);
+               newPlanRow.appendChild(newPlanName);
+               newPlanRow.appendChild(newPlanDescription);
+               newPlanRow.appendChild(newPlanWeek);
+               newPlanRow.appendChild(newAction);
+
+               tableBody.appendChild(newPlanRow);
+         }
          })
 
       }
    }
-
-
 
 
 });
