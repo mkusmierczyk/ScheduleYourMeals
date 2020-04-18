@@ -8,8 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
    const recipesWordSpan = document.querySelector("#recipesWord");
 
    const allRecipes = JSON.parse(localStorage.getItem("recipes"));
-   recipesNumberSpan.innerText = allRecipes.length;
+   if (allRecipes === null){
+   }else {
 
+       recipesNumberSpan.innerText = allRecipes.length;
+   }
 
     if (recipesNumberSpan.innerText == 1) {
         recipesWordSpan.innerText = "przepis"
