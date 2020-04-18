@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevBtn = document.querySelector(".prev");
     const nextBtn = document.querySelector(".next");
 
-    const week = document.querySelector(".schedules__caption span");
+    const weekNum = document.querySelector(".schedules__caption span");
 
     const monday = document.querySelectorAll('.monday');
     const tuesday = document.querySelectorAll('.tuesday');
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let plans = JSON.parse(localStorage.getItem("plans"));
     console.log(plans);
 
-
+    let plansPrev = JSON.parse(localStorage.getItem("plans"));
 
 
     plans.forEach(function (week){
@@ -60,7 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             sunday[counter].innerText = meal;
             counter++
-        })
+
+        });
+
+
+
+            weekNum.innerText = plans.week
+
+
 
         }
     );
