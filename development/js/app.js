@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let userName = nameInput.value;
                 localStorage.setItem("name", userName);
                 window.location.href = 'recipes.html';
-                // let main = location.assign('main.html');
-                // main.reload();
-
+                parent.location.reload();
             }
         });
 });
