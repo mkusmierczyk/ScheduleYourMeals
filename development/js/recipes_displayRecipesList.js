@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const tableBody = document.querySelector("tbody");
     const editBtn = document.querySelector(".fa-edit");
-    console.log(editBtn);
+    // console.log(editBtn);
     const deleteBtn = document.querySelector("td i:last-child");
-    console.log(deleteBtn);
+    // console.log(deleteBtn);
     const addBtn = document.querySelector("button i");
 
 
