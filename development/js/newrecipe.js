@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
         editBtn.classList.add('fas');
         editBtn.classList.add('fa-edit');
 
-        if (inputInstruction.value.length <= 1 || inputInstruction.value.length > 15) {
-            err2.innerText = 'Instrukcja powinna zawierać od 2 do 15 znaków!';
+        if (inputInstruction.value.length <= 1 || inputInstruction.value.length > 30) {
+            err2.innerText = 'Instrukcja powinna zawierać od 2 do 30 znaków!';
             err2.classList.remove('hide');
         } else {
             err2.classList.add('hide');
