@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
    const recipesNumberSpan = document.querySelector("#numberOfRecipes");
    const recipesWordSpan = document.querySelector("#recipesWord");
 
-   // recipesNumberSpan.innerHTML = //tutaj będzie liczba przepisów
+   const allRecipes = JSON.parse(localStorage.getItem("recipes"));
+   recipesNumberSpan.innerText = allRecipes.length;
+
 
     if (recipesNumberSpan.innerText == 1) {
         recipesWordSpan.innerText = "przepis"
