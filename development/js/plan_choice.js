@@ -1,135 +1,129 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
 
-    const weekNum = document.querySelector(".schedules__caption span");
+        const weekNum = document.querySelector(".schedules__caption span");
 
-    const monday = document.querySelectorAll('.monday');
-    const tuesday = document.querySelectorAll('.tuesday');
-    const wednesday = document.querySelectorAll('.wednesday');
-    const thursday = document.querySelectorAll('.thursday');
-    const friday = document.querySelectorAll('.friday');
-    const saturday = document.querySelectorAll('.saturday');
-    const sunday = document.querySelectorAll('.sunday');
+        const monday = document.querySelectorAll('.monday');
+        const tuesday = document.querySelectorAll('.tuesday');
+        const wednesday = document.querySelectorAll('.wednesday');
+        const thursday = document.querySelectorAll('.thursday');
+        const friday = document.querySelectorAll('.friday');
+        const saturday = document.querySelectorAll('.saturday');
+        const sunday = document.querySelectorAll('.sunday');
 
-    let plans = JSON.parse(localStorage.getItem("plans"));
-    console.log(plans);
+        let plans = JSON.parse(localStorage.getItem("plans"));
+        console.log(plans);
 
-    let plansPrev = JSON.parse(localStorage.getItem("plans"));
+        let plansPrev = JSON.parse(localStorage.getItem("plans"));
 
 
-    plans.forEach(function (week){
-        let counter = 0;
-        week.monday.forEach(function (meal) {
+        plans.forEach(function (weekLast) {
+            let counter = 0;
+            weekLast.monday.forEach(function (meal) {
 
-            monday[counter].innerText = meal;
-            counter++
+                monday[counter].innerText = meal;
+                counter++
+            });
+            counter = 0;
+            weekLast.tuesday.forEach(function (meal) {
+
+                tuesday[counter].innerText = meal;
+                counter++
+            });
+            counter = 0;
+            weekLast.wednesday.forEach(function (meal) {
+
+                wednesday[counter].innerText = meal;
+                counter++
+            });
+            counter = 0;
+            weekLast.thursday.forEach(function (meal) {
+
+                thursday[counter].innerText = meal;
+                counter++
+            });
+            counter = 0;
+            weekLast.friday.forEach(function (meal) {
+
+                friday[counter].innerText = meal;
+                counter++
+            });
+            counter = 0;
+            weekLast.saturday.forEach(function (meal) {
+
+                saturday[counter].innerText = meal;
+                counter++
+            });
+            counter = 0;
+            weekLast.sunday.forEach(function (meal) {
+
+                sunday[counter].innerText = meal;
+                counter++;
+
+
+            });
+
+            weekNum.innerText = weekLast.week
+
         });
-         counter = 0;
-        week.tuesday.forEach(function (meal) {
 
-            tuesday[counter].innerText = meal;
-            counter++
-        });
-         counter = 0;
-        week.wednesday.forEach(function (meal) {
-
-            wednesday[counter].innerText = meal;
-            counter++
-        });
-        counter = 0;
-        week.thursday.forEach(function (meal) {
-
-            thursday[counter].innerText = meal;
-            counter++
-        });
-        counter = 0;
-        week.friday.forEach(function (meal) {
-
-            friday[counter].innerText = meal;
-            counter++
-        });
-        counter = 0;
-        week.saturday.forEach(function (meal) {
-
-            saturday[counter].innerText = meal;
-            counter++
-        });
-        counter = 0;
-        week.sunday.forEach(function (meal) {
-
-            sunday[counter].innerText = meal;
-            counter++
-
-        });
+        prevBtn.addEventListener("click", function (event) {
+            for (let i = 0; i <plans.length ; i++) {
 
 
-
-            weekNum.innerText = plans.week
-
-
-
-        }
-    );
-
-    prevBtn.addEventListener("click", function () {
-        plans.forEach(function (week){
+            }
+            plans[i]
+            plans.forEach(function (weekPrev) {
                 let counter = 0;
-                week.monday.forEach(function (meal) {
+                weekPrev.monday.forEach(function (meal) {
 
-                    monday[counter].innerText = meal;
+                    monday[counter ].innerText = meal;
                     counter++
                 });
                 counter = 0;
-                week.tuesday.forEach(function (meal) {
+                weekPrev.tuesday.forEach(function (meal) {
 
                     tuesday[counter].innerText = meal;
                     counter++
                 });
                 counter = 0;
-                week.wednesday.forEach(function (meal) {
+                weekPrev.wednesday.forEach(function (meal) {
 
                     wednesday[counter].innerText = meal;
                     counter++
                 });
                 counter = 0;
-                week.thursday.forEach(function (meal) {
+                weekPrev.thursday.forEach(function (meal) {
 
                     thursday[counter].innerText = meal;
                     counter++
                 });
                 counter = 0;
-                week.friday.forEach(function (meal) {
+                weekPrev.friday.forEach(function (meal) {
 
                     friday[counter].innerText = meal;
                     counter++
                 });
                 counter = 0;
-                week.saturday.forEach(function (meal) {
+                weekPrev.saturday.forEach(function (meal) {
 
                     saturday[counter].innerText = meal;
                     counter++
                 });
                 counter = 0;
-                week.sunday.forEach(function (meal) {
+                weekPrev.sunday.forEach(function (meal) {
 
                     sunday[counter].innerText = meal;
-                    counter++
-                })
-
-            }
-        );
+                    counter++;
 
 
+                });
 
+                weekNum.innerText = weekPrev.week
 
+            });
 
-    });
-
-    nextBtn.addEventListener("click", function () {
-
+        })
 
     });
-
-
-});
