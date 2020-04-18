@@ -1,7 +1,9 @@
 .new_recipe_form {
+  background: url("/images/image.png");
   color: $nav_color;
   display: flex;
   justify-content: center;
+  height: 100vh;
   form {
     border: 1px solid $nav_color;
     border-radius: 5px;
@@ -9,6 +11,7 @@
     padding: 1.2rem;
     margin: 20px 0;
     background-color: $screen_bg;
+    height: 500px;
     div[class*='error'] {
       color: $trash_color;
     }

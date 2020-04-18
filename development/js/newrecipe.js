@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
             err2.classList.add('hide');
             let newInstruction = document.createElement('li');
             newInstruction.setAttribute('contenteditable', 'false');
-
             newInstruction.innerText = inputInstruction.value;
             newInstruction.appendChild(trashBtn);
             newInstruction.appendChild(editBtn);
@@ -97,10 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 instructions.removeChild(newInstruction);
             });
             editBtn.addEventListener('click',function () {
-                if (newIngredient.getAttribute('contenteditable')==='false') {
-                    newIngredient.setAttribute('contenteditable', 'true');
+                if (newInstruction.getAttribute('contenteditable')==='false') {
+                    newInstruction.setAttribute('contenteditable', 'true');
                 } else {
-                    newIngredient.setAttribute('contenteditable', 'false');
+                    newInstruction.setAttribute('contenteditable', 'false');
                 }
             });
         }
