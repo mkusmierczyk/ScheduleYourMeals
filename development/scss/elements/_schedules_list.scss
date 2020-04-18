@@ -2,7 +2,10 @@
   height: 75vh;
   padding: 20px;
   margin: 40px;
-  background: white;
+  background: $screen_bg;
+  border: 1px dotted $nav_color;
+  border-radius: 5px;
+
   &__content {
     width: 100%;
     &__header {

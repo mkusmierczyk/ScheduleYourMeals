@@ -27,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
        //tutaj dodamy klase pokazywania popup zeby dodac przepis
        window.location.href = 'newRecipe.html';
 
+
+
+
+
        addRecipeBtn.classList.add("hide");
        addPlanBtn.classList.add("hide");
        widgetsInfoBox.forEach(function (element) {
