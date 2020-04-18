@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
 }
+.bg {
+  width: 100%;
+  background: $bg_color;
+}
 .section1 {
   background-color: $bg_color;
 }
