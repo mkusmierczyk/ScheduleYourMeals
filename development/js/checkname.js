@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (localStorage.getItem('name')!=null) {
         nameSpan.innerText = localStorage.getItem('name');
+    } else {
+        // window.location.reload(false);
+
     }
 
 });

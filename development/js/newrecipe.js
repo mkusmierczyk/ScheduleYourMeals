@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (addInstructionBtn === null) {
 
+
     }else {
         addInstructionBtn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -131,8 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (addNewRecipeBtn === null) {
 
     }else {
-
-
         addNewRecipeBtn.addEventListener('click', function (e) {
             e.preventDefault();
 
@@ -198,6 +197,5 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         });
-
     }
 });
