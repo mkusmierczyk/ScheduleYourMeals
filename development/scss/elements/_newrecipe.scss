@@ -9,6 +9,12 @@
     padding: 1.2rem;
     margin: 20px 0;
     background-color: $screen_bg;
+    div[class*='error'] {
+      color: $trash_color;
+    }
+    div[class*='success'] {
+      color: $success-color;
+    }
   }
   input {
     font-size: 1rem;

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('.new_recipe_form form');
 
     const tableBody = document.querySelector("tbody");
-    const addNewRecipeBtn = document.querySelector('.save_quit'); //btn dodaje przepis do planu i zamyka okno nowy przepis
+    const addNewRecipeBtn = document.querySelector('.save_quit');
 
     const addInstructionBtn = document.querySelector('.add_instruction');
     const addIngredientBtn = document.querySelector('.add_ingredient');
@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
         ingredients: [],
         instruction: []
     };
+    //error msg
+    let err1 = document.querySelector('.error_msg1');
+    let err2 = document.querySelector('.error_msg2');
+    let err3 = document.querySelector('.error_msg3');
+    let err4 = document.querySelector('.error_msg4');
+    let successmsg = document.querySelector('.success_msg');
 
     addIngredientBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -33,12 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
         editBtn.classList.add('fas');
         editBtn.classList.add('fa-edit');
 
-        if (inputIngredient.value.length < 1) {
-            //error msg
+        if (inputIngredient.value.length <= 1 || inputIngredient.value.length > 15) {
+            err1.innerText = 'Składnik powinien zawierać od 2 do 15 znaków!';
+            err1.classList.remove('hide');
         } else {
+            err1.classList.add('hide');
             let newIngredient = document.createElement('li');
             newIngredient.setAttribute('contenteditable', 'false');
-
             newIngredient.innerText = inputIngredient.value;
             newIngredient.appendChild(trashBtn);
             newIngredient.appendChild(editBtn);
@@ -71,9 +78,11 @@ document.addEventListener("DOMContentLoaded", function () {
         editBtn.classList.add('fas');
         editBtn.classList.add('fa-edit');
 
-        if (inputInstruction.value.length < 1) {
-            //error msg
+        if (inputInstruction.value.length <= 1 || inputInstruction.value.length > 15) {
+            err2.innerText = 'Instrukcja powinna zawierać od 2 do 15 znaków!';
+            err2.classList.remove('hide');
         } else {
+            err2.classList.add('hide');
             let newInstruction = document.createElement('li');
             newInstruction.setAttribute('contenteditable', 'false');
 
@@ -97,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    let recipes =[];
     let dataFromLocalStorage = [];
 
     let saveRecipeToLS = function (newObject) {
@@ -114,57 +122,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
     addNewRecipeBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        newRecipe.description = description.value;
-        newRecipe.title = title.value;
-        let allRecipes = JSON.parse(localStorage.getItem("recipes"));
-        if (allRecipes === null) {
-            allRecipes = [];
+
+        if (title.value.length <= 1 || title.value.length > 15) {
+            err3.innerText = 'Nazwa przepisu powinna zawierać od 2 do 15 znaków!';
+            err3.classList.remove('hide');
+        } else if (description.value.length <= 1 || description.value.length > 200) {
+            err4.innerText = 'Opis przepisu powinien zawierać od 2 do 200 znaków!';
+            err4.classList.remove('hide');
+        } else {
+            err3.classList.add('hide');
+            err4.classList.add('hide');
+            successmsg.classList.remove('hide');
+
+            newRecipe.description = description.value;
+            newRecipe.title = title.value;
+            let allRecipes = JSON.parse(localStorage.getItem("recipes"));
+            if (allRecipes === null) {
+                allRecipes = [];
+            }
+            newRecipe.id = allRecipes.length + 1;
+
+            saveRecipeToLS(newRecipe);
+
+            let newRecipeRow = document.createElement("tr");
+            newRecipeRow.classList.add("row");
+            let newRecipeId = document.createElement("td");
+            newRecipeId.classList.add("col-1");
+            let newRecipeName = document.createElement("td");
+            newRecipeName.classList.add("col-2");
+            let newRecipeDescription = document.createElement("td");
+            newRecipeDescription.classList.add("col-8");
+            let newActionElem = document.createElement("td");
+            newActionElem.classList.add("col-1");
+
+            let trashBtn = document.createElement('i');
+            trashBtn.classList.add('fas');
+            trashBtn.classList.add('fa-trash-alt');
+            let editBtn = document.createElement('i');
+            editBtn.classList.add('fas');
+            editBtn.classList.add('fa-edit');
+
+            newActionElem.appendChild(editBtn);
+            newActionElem.appendChild(trashBtn);
+
+            newRecipeId.innerText = newRecipe.id;
+            newRecipeName.innerText = title.value;
+            newRecipeDescription.innerText = description.value;
+
+            newRecipeRow.appendChild(newRecipeId);
+            newRecipeRow.appendChild(newRecipeName);
+            newRecipeRow.appendChild(newRecipeDescription);
+            newRecipeRow.appendChild(newActionElem);
+
+            let timeout = setTimeout(function () {
+                window.location.href = 'recipes.html';
+            }, 2500);
+
+            tableBody.appendChild(newRecipeRow);
+            form.reset();
+            ingredients.innerHTML = '';
+            instructions.innerHTML = '';
         }
-        newRecipe.id = allRecipes.length + 1;
-        recipes.push(newRecipe);
-        saveRecipeToLS(newRecipe);
-
-        let newRecipeRow = document.createElement("tr");
-        newRecipeRow.classList.add("row");
-        let newRecipeId = document.createElement("td");
-        newRecipeId.classList.add("col-1");
-        let newRecipeName = document.createElement("td");
-        newRecipeName.classList.add("col-2");
-        let newRecipeDescription = document.createElement("td");
-        newRecipeDescription.classList.add("col-8");
-        let newActionElem = document.createElement("td");
-        newActionElem.classList.add("col-1");
-
-        let trashBtn = document.createElement('i');
-        trashBtn.classList.add('fas');
-        trashBtn.classList.add('fa-trash-alt');
-        let editBtn = document.createElement('i');
-        editBtn.classList.add('fas');
-        editBtn.classList.add('fa-edit');
-
-        newActionElem.appendChild(editBtn);
-        newActionElem.appendChild(trashBtn);
-
-        newRecipeId.innerText = newRecipe.id;
-        newRecipeName.innerText = title.value;
-        newRecipeDescription.innerText = description.value;
-
-        newRecipeRow.appendChild(newRecipeId);
-        newRecipeRow.appendChild(newRecipeName);
-        newRecipeRow.appendChild(newRecipeDescription);
-        newRecipeRow.appendChild(newActionElem);
-
-        window.location.href = 'recipes.html';
-
-        tableBody.appendChild(newRecipeRow);
-
-        form.reset();
-        ingredients.innerHTML = '';
-        instructions.innerHTML = '';
 
     });
-
-
 
 
 });

@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
 
         const nameDescription = document.getElementById("planName");
-        console.log(nameDescription);
         const weekNumber = document.getElementById("nb");
-        console.log(weekNumber);
         const saveButton = document.querySelector("button");
-        console.log(saveButton);
         const planDescription = document.getElementById("description");
-        console.log(planDescription);
         let allSelects = document.querySelectorAll("select");
         const mondayPlan = document.getElementById("monday").getElementsByTagName("select");
         const tuesdayPlan = document.getElementById("tuesday").getElementsByTagName("select");
@@ -16,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const fridayPlan = document.getElementById("friday").getElementsByTagName("select");
         const saturdayPlan = document.getElementById("saturday").getElementsByTagName("select");
         const sundayPlan = document.getElementById("sunday").getElementsByTagName("select");
-        console.log(mondayPlan);
-        console.log(allSelects);
             // pobranie przepisów z LS
         let fromRecipes = JSON.parse(localStorage.getItem("recipes"));
-        console.log(fromRecipes);//sprawdzam czy pobrało przepsy z ls
 
+        if (fromRecipes === null) {
+            fromRecipes = [];
+        }
 
         let recipes = [];
         fromRecipes.forEach(function (element) {
@@ -29,10 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
             let title = element.title;
             recipes.push(title);
             return recipes;
-        })
+        });
 
         let przepisy = ["kiełba", "ogór", "jajecznica", "tosty", "ser"];//to było tylko do testowania dodawania dań do selectów
-        console.log(przepisy);//sprawdzenie
                 // dodanie do selectów listy dań z jakiejś tablicy w tym wypadku z recipes
         allSelects.forEach(function (select) {
             recipes.forEach(function (element) {
@@ -40,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 option.innerHTML = element;
                 select.appendChild(option)
             })
-        })
+        });
 
 
         saveButton.addEventListener("click", function () {
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 let name = nameDescription.value;
                 let description = planDescription.value;
                 let monday = mondayPlan.value;
-                console.log(monday);
 
                 function getValues(plan) {
                     let propArray = [];
@@ -63,8 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     return propArray
                 }
 
-                console.log(getValues(mondayPlan));
-                console.log(getValues(tuesdayPlan));
 
 
                 let dataFromStorage = localStorage.getItem('plans');
@@ -101,9 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
             //     //alert
             // }
         });
-        let mateusz = JSON.parse(localStorage.getItem("monday"));
-        console.log(mateusz);
-        // console.log(localStorage.getItem("week"));
-        // console.log(localStorage);
+
     }
 )
