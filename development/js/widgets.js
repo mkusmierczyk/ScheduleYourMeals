@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
        window.location.href = 'newRecipe.html';
 
 
+
+
+
        addRecipeBtn.classList.add("hide");
        addPlanBtn.classList.add("hide");
        widgetsInfoBox.forEach(function (element) {
