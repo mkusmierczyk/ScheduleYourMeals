@@ -11,6 +11,9 @@ html {
   margin: 30px;
 }
 .newSchedule {
+  border: 1px dotted $nav_color;
+  background: $screen_bg;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   padding: 20px;

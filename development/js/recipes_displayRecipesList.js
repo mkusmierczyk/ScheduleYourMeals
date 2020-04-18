@@ -1,36 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const tableBody = document.querySelector("tbody");
-    const editBtn = document.querySelector("td i:first-child");
+    const editBtn = document.querySelector(".fa-edit");
+    console.log(editBtn);
     const deleteBtn = document.querySelector("td i:last-child");
+    console.log(deleteBtn);
     const addBtn = document.querySelector("button i");
+
 
 
     if (editBtn === null) {
 
     }else {
-
-
-        editBtn.addEventListener("click", function () {
-            window.location.href = 'schedules.html';
-            //  this.parentElement.parentElement.contentEditable = "true";
-            //localStorage.setItem('nazwa_polaLocalS, userName)
-        });
+        // editBtn.forEach(function (singleEditBtn) {
+        //     singleEditBtn.addEventListener("click", function () {
+        //         const popup = document.createElement("span");
+        //         popup.innerText = "Gotowe do edycji! Po prostu kliknij w miejsce, które chcesz zedytować. Buziaki, Maria ;)";
+        //         popup.classList.add("popupEdit");
+        //         popup.style.display = "block";
+        //         this.parentElement.parentElement.contentEditable = "true";
+        //         this.parentElement.appendChild(popup);
+        //         setTimeout(function () {
+        //             popup.style.display = "none"
+        //         }, 2000)
+        //     })
+        //
+        // });
     }
 
 
     if (deleteBtn === null) {
 
     }else {
-
-
         deleteBtn.addEventListener("click", function () {
             this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
             // localStorage.removeItem('keyName')  dodać nazwę local storage
         });
     }
-
-
 
     addBtn.addEventListener("click", function () {
         //przejscie do okna dodawania nowego planu
