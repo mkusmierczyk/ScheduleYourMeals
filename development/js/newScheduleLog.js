@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const fridayPlan = document.getElementById("friday").getElementsByTagName("select");
         const saturdayPlan = document.getElementById("saturday").getElementsByTagName("select");
         const sundayPlan = document.getElementById("sunday").getElementsByTagName("select");
-            // pobranie przepisów z LS
+        const success = document.querySelector(".successmsg");
+        console.log(success);
+
+    // pobranie przepisów z LS
         let fromRecipes = JSON.parse(localStorage.getItem("recipes"));
 
         if (fromRecipes === null) {
@@ -40,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         saveButton.addEventListener("click", function () {
             if (weekNumber.value >= 54 || weekNumber.value <= 0) {
-                alert("wypełniłeś błędnie formularz. Przyjmuje wartości 1-54");
+                alert("Wypełniłeś błędnie formularz. Numer tygodnia przyjmuje wartości 1-54");
             } else if (planDescription.value.length > 50) {
-                alert("wypełniłeś błędnie formularz za dużo znaków");
+                alert("Za dużo znaków w Opisie planu. max to 50 znaków");
             } else {
                 let week = weekNumber.value;
                 let name = nameDescription.value;
@@ -82,6 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 plans.push(plan);
 
                 localStorage.setItem('plans', JSON.stringify(plans));
+
+                success.classList.remove('hide');
+
+                let timeout = setTimeout(function () {
+                    window.location.href = 'schedules.html';
+                }, 2500);
 
 
             }
