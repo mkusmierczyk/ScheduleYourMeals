@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let errorMsg = document.querySelector('.error_msg');
 
         if (localStorage.getItem('name')!=null) {
-            window.location.href = 'recipes.html';
+            window.location.href = 'app.html';
         }
         errorMsg.classList.add('visible');
 
@@ -18,10 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let userName = nameInput.value;
                 localStorage.setItem("name", userName);
 
-                window.location.href = 'recipes.html'; //do odswieżenia po zapisaniu imienia do spana
-
-
-                window.location.href = 'recipes.html';
+                window.location.href = 'app.html';
                 parent.location.reload();
 
             }
