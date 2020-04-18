@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
    const addBtn = document.querySelector("button i");
 
    addBtn.addEventListener("click", function () {
-       //przejscie do okna dodawania nowego planu
-
+      window.location.href = 'newSchedule.html';
    });
 
    getPlansfromLS();
@@ -12,26 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
    const editBtn = document.querySelectorAll(".fa-edit");
    editBtn.forEach(function (singleEditBtn) {
       singleEditBtn.addEventListener("click", function () {
-         console.log("elo");
          const popup = document.createElement("span");
-         popup.innerText = "Gotowe do edycji!";
+         popup.innerText = "Gotowe do edycji! Po prostu kliknij w miejsce, które chcesz zedytować. Buziaki, Maria ;)";
          popup.classList.add("popupEdit");
+         popup.style.display = "block";
+         this.parentElement.parentElement.contentEditable = "true";
          this.parentElement.appendChild(popup);
-
-
+         setTimeout(function () {
+            popup.style.display = "none"
+         }, 2000)
       })
-
    });
-
-
-
-
 
 
    const deleteBtn = document.querySelectorAll(".fa-trash-alt");
 
    deleteBtn.forEach(function (singleDeleteBtn) {
-      console.log("elo");
       singleDeleteBtn.addEventListener("click", function () {
          this.parentElement.parentElement.parentElement.removeChild(this.parentElement.parentElement);
 

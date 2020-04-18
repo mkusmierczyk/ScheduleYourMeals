@@ -66,8 +66,15 @@
   }
 
 .popupEdit {
-  width: 100px;
-  height: 100px;
-  background-color: tomato;
+  background-color: $btn_color;
   position: absolute;
+  border-radius: 10px;
+  display: none;
+  text-align: center;
+  padding:15px;
+  margin-top: 20px;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+
 }
