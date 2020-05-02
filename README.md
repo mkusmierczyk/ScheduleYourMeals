@@ -1,4 +1,4 @@
-# Schedule Your Meal. Application for scheduling your meal.
+# Schedule Your Meal Application
 
 ## Table of contents
 * [General info](#general-info)
