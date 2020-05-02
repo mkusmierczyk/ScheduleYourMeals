@@ -45,6 +45,7 @@ Especially in:
 * CSS - version 4.0
 * Sass -  with Gulp Tool
 * Save data in Local Storage
+* Vanilla JavaScript 
 ## Setup
 
 How to start:
