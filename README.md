@@ -56,7 +56,7 @@ To start development follow this instruction:
 
 
 Gulp usage:
-Avaliable commends for you to type in console:
+Available commends for you to type in console:
 
 `npm run watch` - runs gulp in watch mode, that will compiles your `main.scss` into `css/main.css` and run the server.
 
@@ -81,10 +81,10 @@ To-do list:
 Project is: _in progress_, 
 
 ## Participants
- *[Agata Urbanska](https://github.com/agataurbanska9) 
- *[Patryk Urbanski](https://github.com/PatrykUrbanski) 
- *[Jakub Statuch](https://github.com/JakubStatuch) 
- *[Mateusz Kusmierczyk](https://github.com/mkusmierczyk)
+ * [Agata Urbanska](https://github.com/agataurbanska9) 
+ * [Patryk Urbanski](https://github.com/PatrykUrbanski) 
+ * [Jakub Statuch](https://github.com/JakubStatuch) 
+ * [Mateusz Kusmierczyk](https://github.com/mkusmierczyk)
 
 
 ## Inspiration
