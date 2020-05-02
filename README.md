@@ -89,7 +89,7 @@ Project is: _in progress_,
 
 
 ## Inspiration
-Project inspired based on CodersLab guidelines. 
+Project based on CodersLab guidelines. 
 
 ## Contact
 Created by Mateusz Kusmierczyk. Feel free to contact me!
